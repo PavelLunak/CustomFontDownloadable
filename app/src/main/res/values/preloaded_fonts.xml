@@ -3,5 +3,6 @@
     <array name="preloaded_fonts" translatable="false">
         <item>@font/abhaya_libre</item>
         <item>@font/alex_brush</item>
+        <item>@font/chelsea_market</item>
     </array>
 </resources>

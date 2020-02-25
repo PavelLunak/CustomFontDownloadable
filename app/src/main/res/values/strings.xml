@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">CustomFontDownloadable</string>
+
+    <string-array name="fonts_array">
+        <item>Actor</item>
+        <item>Aclonica</item>
+        <item>Alfa Slab One</item>
+        <item>Aguafina Script</item>
+        <item>Alegreya</item>
+        <item>Aldrich</item>
+        <item>Wendy One</item>
+        <item>Wallpoet</item>
+    </string-array>
 </resources>
