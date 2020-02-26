@@ -28,6 +28,8 @@ import static android.support.v4.provider.FontsContractCompat.FontRequestCallbac
 import static android.support.v4.provider.FontsContractCompat.FontRequestCallback.FAIL_REASON_FONT_UNAVAILABLE;
 import static android.support.v4.provider.FontsContractCompat.FontRequestCallback.FAIL_REASON_MALFORMED_QUERY;
 import static android.support.v4.provider.FontsContractCompat.FontRequestCallback.FAIL_REASON_PROVIDER_NOT_FOUND;
+import static android.support.v4.provider.FontsContractCompat.FontRequestCallback.FAIL_REASON_SECURITY_VIOLATION;
+import static android.support.v4.provider.FontsContractCompat.FontRequestCallback.FAIL_REASON_WRONG_CERTIFICATES;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -46,13 +48,6 @@ public class MainActivity extends AppCompatActivity {
         label_04 = findViewById(R.id.label_04);
         btn_01 = findViewById(R.id.btn_01);
         spinner = findViewById(R.id.spinner);
-
-        btn_01.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setMyFont("Alegreya");
-            }
-        });
 
         ArrayList<String> list = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.fonts_array)));
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, list);
@@ -151,6 +146,7 @@ public class MainActivity extends AppCompatActivity {
             handlerThread.start();
             myHandler = new Handler(handlerThread.getLooper());
         }
+
         return myHandler;
     }
 
@@ -158,10 +154,14 @@ public class MainActivity extends AppCompatActivity {
         switch (errCode) {
             case FAIL_REASON_PROVIDER_NOT_FOUND:
                 return "FAIL_REASON_PROVIDER_NOT_FOUND - daný poskytovatel nebyl v zařízení nalezen.";
-            case FAIL_REASON_FONT_NOT_FOUND:
-                return "FAIL_REASON_FONT_NOT_FOUND - Poskytovatel fontu nevrátil pro daný dotaz žádné výsledky.";
+            case FAIL_REASON_WRONG_CERTIFICATES:
+                return "FAIL_REASON_WRONG_CERTIFICATES - daný poskytovatel musí být ověřen a dané certifikáty neodpovídají jeho podpisu..";
             case FAIL_REASON_FONT_LOAD_ERROR:
                 return "FAIL_REASON_FONT_LOAD_ERROR - vrácený font nebyl správně načten.";
+            case FAIL_REASON_SECURITY_VIOLATION:
+                return "FAIL_REASON_SECURITY_VIOLATION - písmo nebylo načteno kvůli problémům se zabezpečením.";
+            case FAIL_REASON_FONT_NOT_FOUND:
+                return "FAIL_REASON_FONT_NOT_FOUND - Poskytovatel fontu nevrátil pro daný dotaz žádné výsledky.";
             case FAIL_REASON_FONT_UNAVAILABLE:
                 return "FAIL_REASON_FONT_UNAVAILABLE - poskytovatel písma našel dotazovaný font, ale momentálně není k dispozici.";
             case FAIL_REASON_MALFORMED_QUERY:

@@ -6,64 +6,97 @@
     android:orientation="vertical"
     android:padding="10dp">
 
-    <TextView
-        android:id="@+id/label_01"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="Tento font je nastavený pro veškerý text této aplikace. Včetně tlačítka podemnou."
-        android:textColor="#921F1F"
-        android:textSize="24sp" />
 
-    <Button
-        android:id="@+id/btn_01"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        android:textSize="30sp" />
-
-    <TextView
-        android:id="@+id/label_02"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:fontFamily="@font/alex_brush"
-        android:gravity="center_horizontal"
-        android:text="Create downloadable Font"
-        android:textColor="#4249A8"
-        android:textSize="24sp" />
-
-    <TextView
-        android:id="@+id/label_03"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:fontFamily="@font/slackey"
-        android:gravity="center_horizontal"
-        android:text="Add font to project"
-        android:textColor="#D05F08"
-        android:textSize="24sp" />
-
-    <TextView
-        android:id="@+id/label_04"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:gravity="center_horizontal"
-        android:text="Tento font je nastaven programově v kódu MainActivity"
-        android:textColor="@android:color/black"
-        android:textSize="24sp" />
-
-    <TextView
-        android:id="@+id/textView"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="Nastavení fontu posledního TextView:" />
+        android:layout_height="match_parent">
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/label_01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Tento font je nastavený pro veškerý text této aplikace. Včetně tlačítka podemnou."
+                android:textColor="#921F1F"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/btn_01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Button"
+                android:textSize="30sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/label_02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/alex_brush"
+                android:gravity="center_horizontal"
+                android:text="Create downloadable Font"
+                android:textColor="#4249A8"
+                android:textSize="24sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/label_03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/slackey"
+                android:gravity="center_horizontal"
+                android:text="Add font to project"
+                android:textColor="#D05F08"
+                android:textSize="24sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Nastavení fontu Následujícího TextView:" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/label_04"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center_horizontal"
+                android:text="Tento font je nastaven programově v kódu MainActivity."
+                android:textColor="@android:color/black"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>
